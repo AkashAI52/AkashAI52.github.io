@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes - Akash</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<button onclick="toggleMode()" class="toggle-btn">🌙</button>
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="experience.html">Experience</a> |
+    <a href="notes.html">Notes</a> |
+    <a href="memories.html">Memories</a>
+</nav>
+
+
+
+<h1>Math Notes</h1>
+
+<ul>
+    <li>Gradient Descent (coming soon)</li>
+    <li>Convex Optimization</li>
+</ul>
+<h2>Tutorial and Midterm Solutions</h2>
+
+<ul>
+    <li>
+        <a href="#" onclick="openPDF('pdf/Tutorial1_Solutions__E0_331.pdf')">
+            Tutorial 1 Solutions - E0 331
+        </a>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <a href="#" onclick="openPDF('pdf/Midterm_1_E0_331_EXAM_Solution.pdf')">
+            Midterm 1 Solutions - E0 331
+        </a>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <a href="#" onclick="openPDF('pdf/Tutorial_2_Solution__E0_331.pdf')">
+            Tutorial 2 Solutions - E0 331
+        </a>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <a href="#" onclick="openPDF('pdf/Midterm2_Solutions__E0_331.pdf')">
+            Midterm 2 Solutions - E0 331
+        </a>
+    </li>
+</ul>
+
+<!-- Modal -->
+<div id="pdfModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closePDF()">&times;</span>
+        <iframe id="pdfFrame" src=""></iframe>
+    </div>
+</div>
+
+
+
+</body>
+</html>
