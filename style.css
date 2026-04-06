@@ -226,3 +226,28 @@ a {
 .dark .modal-content {
     background: #1e1e1e;
 }
+
+
+.course-heading {
+    color: #2e8b57;
+    margin-top: 15px;
+}
+
+.dark .course-heading {
+    color: #7bd88f;
+}
+
+.achievements-list {
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.course-section li {
+    margin-bottom: 4px;
+}
+
+/* Optional: make codes slightly dim */
+.course-section li span {
+    color: gray;
+    font-size: 14px;
+}
