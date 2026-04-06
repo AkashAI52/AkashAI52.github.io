@@ -25,3 +25,20 @@ function closePDF() {
     document.getElementById("pdfModal").style.display = "none";
     document.getElementById("pdfFrame").src = "";
 }
+
+document.getElementById("lastUpdated").innerText =
+    new Date().toLocaleDateString("en-GB", {
+        month: "long",
+        year: "numeric"
+    });
+
+function updateClock() {
+    const now = new Date();
+
+    const time = now.toLocaleTimeString();
+
+    document.getElementById("clock").innerText = "🕒 " + time;
+}
+
+setInterval(updateClock, 1000);
+updateClock();

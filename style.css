@@ -251,3 +251,133 @@ a {
     color: gray;
     font-size: 14px;
 }
+
+/* Each image + caption */
+.gallery-item {
+    text-align: center;
+}
+
+/* Caption styling (GREEN as you want) */
+.memory-caption {
+    color: #2e8b57;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dark .memory-caption {
+    color: #7bd88f;
+}
+
+.notes-sublist a {
+    color: #66d9ef;
+    text-decoration: none;
+}
+
+.notes-sublist a:hover {
+    text-decoration: underline;
+}
+
+.notes-sublist {
+    margin-bottom: 25px;
+    padding-left: 15px;
+}
+
+.inner-list {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.inner-list li {
+    margin: 4px 0;
+}
+
+.note-description {
+    margin-top: 8px;
+    font-style: italic;
+    color: #aaa;
+}
+
+.dark .note-description {
+    color: #cccccc;
+}
+
+
+.brace-note {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.brace {
+    font-size: 40px;
+    line-height: 1;
+    margin-right: 10px;
+    color: #2e8b57;
+}
+
+.brace-note p {
+    margin: 0;
+    font-style: italic;
+    color: #aaa;
+}
+
+/* Dark mode */
+.dark .brace {
+    color: #7bd88f;
+}
+
+.dark .brace-note p {
+    color: #ccc;
+}
+
+
+.note-arrow {
+    text-align: center;
+    font-size: 22px;
+    margin: 5px 0;
+    color: #2e8b57;
+}
+
+.note-description {
+    text-align: center;
+    font-style: italic;
+    color: #aaa;
+    max-width: 600px;
+    margin: 0 auto 15px;
+}
+
+/* Dark mode */
+.dark .note-arrow {
+    color: #7bd88f;
+}
+
+.dark .note-description {
+    color: #ccc;
+}
+
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Dark mode */
+.dark .footer {
+    color: #bbb;
+}
+
+.clock {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Dark mode */
+.dark .clock {
+    color: #ccc;
+}
