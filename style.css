@@ -437,3 +437,8 @@ a {
 .dark .subject-title {
     color: #7bd88f;
 }
+
+.note-desc {
+    color: #555;
+    font-size: 0.95em;
+}
