@@ -4,7 +4,7 @@
         document.documentElement.classList.add("dark");
     }
 })();
-
+/*
 function toggleMode() {
     document.documentElement.classList.toggle("dark");
 
@@ -14,7 +14,7 @@ function toggleMode() {
         localStorage.setItem("theme", "light");
     }
 }
-
+*/
 
 function openPDF(pdfUrl) {
     document.getElementById("pdfModal").style.display = "block";
