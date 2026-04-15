@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title>Akash Mondal</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+    <!-- KaTeX JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+    <!-- Auto-render config -->
+    <script defer>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ]
+      });
+    });
+    </script>
 </head>
+
 <body>
 
 <!-- <button onclick="toggleMode()" class="toggle-btn">🌙</button> -->
@@ -27,7 +47,6 @@
     <div class="intro-text">
         <p>
         Hi there, thank you for visiting my site.<br><br>
-
         I am <b>Akash Mondal</b>, currently a PhD student in the 
         <span class="edu-inst">Department of Electrical Engineering</span> at 
         <span class="edu-inst">Indian Institute of Science</span>, under the supervision of 

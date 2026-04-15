@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Optimization Tutorial Solutions</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+<style>
+body {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    font-family: Georgia, serif;
+    line-height: 1.7;
+}
+.katex-display {
+    text-align: left;
+    margin: 1.5em 0;
+}
+h2 {
+    margin-top: 40px;
+}
+</style>
+
+<script defer>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}
+    ]
+  });
+});
+</script>
+
+</head>
+
+<body>
+
+<h1>Optimization for Machine Learning (E0 331)</h1>
+<p><b>Tutorial 1 Solutions</b></p>
+
+<!-- Q1 -->
+<h2>1. Convexity of Interior and Closure</h2>
+
+<p><b>Problem.</b> Let $ \Omega \subset \mathbb{R}^n $ be convex. Show that $ \mathrm{int}(\Omega) $ and $ \overline{\Omega} $ are convex.</p>
+
+<p><b>Solution.</b></p>
+
+<p><b>Convexity of $ \mathrm{int}(\Omega) $:</b></p>
+
+<p>Fix $ a, b \in \mathrm{int}(\Omega) $ and $ \lambda \in (0,1) $. Since $ a \in \mathrm{int}(\Omega) $, there exists an open set $ V_a $ such that:</p>
+
+$$
+a \in V_a \subset \Omega
+$$
+
+<p>Define:</p>
+
+$$
+V = \{ \lambda x + (1-\lambda)b \mid x \in V_a \}
+$$
+
+<p>Then $ V $ is open, contains $ \lambda a + (1-\lambda)b $, and satisfies $ V \subset \Omega $. Hence:</p>
+
+$$
+\lambda a + (1-\lambda)b \in \mathrm{int}(\Omega)
+$$
+
+<!-- Q2 -->
+<h2>2. Convex Functions</h2>
+
+<p><b>Problem.</b> Let $f_i : \\mathbb{R}^n \\to \\mathbb{R}$ be convex.</p>
+
+<p><b>(i) Scalar multiple</b></p>
+
+$$
+f_i(\lambda x + (1-\lambda)y) \le \lambda f_i(x) + (1-\lambda)f_i(y)
+$$
+
+<p>Multiply by $\\alpha > 0$:</p>
+
+$$
+\alpha f_i(\lambda x + (1-\lambda)y)
+\le \lambda \alpha f_i(x) + (1-\lambda)\alpha f_i(y)
+$$
+
+<p>Hence $\\alpha f_i$ is convex.</p>
+
+---
+
+<p><b>(ii) Sum of convex functions</b></p>
+
+$$
+f(x) = \sum_{i=1}^m f_i(x)
+$$
+
+$$
+\begin{aligned}
+f(\lambda x + (1-\lambda)y)
+&= \sum_{i=1}^m f_i(\lambda x + (1-\lambda)y) \\
+&\le \lambda \sum f_i(x) + (1-\lambda)\sum f_i(y) \\
+&= \lambda f(x) + (1-\lambda)f(y)
+\end{aligned}
+$$
+
+---
+
+<p><b>(iii) Maximum of convex functions</b></p>
+
+$$
+f(x) = \max_i f_i(x)
+$$
+
+$$
+\text{epi}(f) = \bigcap_i \text{epi}(f_i)
+$$
+
+<p>Intersection of convex sets is convex ⇒ $f$ is convex.</p>
+
+---
+
+<p><b>(b) Counterexample:</b></p>
+
+$$
+f_1(x)=x, \quad f_2(x)=x^2
+$$
+
+$$
+g(x)=\min(x,x^2)
+$$
+
+<p>Choose $x_1=\frac{1}{2}, x_2=2$:</p>
+
+$$
+g\left(\frac{x_1+x_2}{2}\right) > \frac{g(x_1)+g(x_2)}{2}
+$$
+
+<p>Hence not convex.</p>
+
+---
+
+<!-- Q3 -->
+<h2>3. Partial Minimization</h2>
+
+<p><b>Problem.</b> Let $f(x,y)$ convex and $C$ convex. Define:</p>
+
+$$
+g(x) = \inf_{y \in C} f(x,y)
+$$
+
+<p><b>Solution.</b></p>
+
+<p>Fix $x_1,x_2$ and $\\lambda \\in (0,1)$.</p>
+
+<p>Choose $y_1,y_2$ such that:</p>
+
+$$
+f(x_1,y_1) \le g(x_1)+\epsilon, \quad f(x_2,y_2) \le g(x_2)+\epsilon
+$$
+
+<p>Define:</p>
+
+$$
+y_\lambda = \lambda y_1 + (1-\lambda)y_2
+$$
+
+<p>Then:</p>
+
+$$
+\begin{aligned}
+g(\lambda x_1 + (1-\lambda)x_2)
+&\le f(\lambda x_1 + (1-\lambda)x_2, y_\lambda) \\
+&\le \lambda f(x_1,y_1) + (1-\lambda)f(x_2,y_2) \\
+&\le \lambda g(x_1) + (1-\lambda)g(x_2) + \epsilon
+\end{aligned}
+$$
+
+<p>Let $\\epsilon \\to 0$:</p>
+
+$$
+g(\lambda x_1 + (1-\lambda)x_2)
+\le \lambda g(x_1) + (1-\lambda)g(x_2)
+$$
+
+<p>Hence $g$ is convex.</p>
+
+</body>
+</html>

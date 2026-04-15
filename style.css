@@ -451,3 +451,13 @@ body.dark .clock {
         width: 180px;
     }
 }
+
+
+.katex-display {
+    text-align: left;   /* or center if you prefer */
+    margin: 1.5em 0;
+}
+
+.katex {
+    font-size: 1.1em;
+}
