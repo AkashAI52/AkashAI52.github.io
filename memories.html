@@ -4,6 +4,60 @@
     
     <title>Memories</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+    /* ===== Gallery Layout ===== */
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    /* ===== Responsive ===== */
+
+    /* Tablet */
+    @media (max-width: 900px) {
+        .gallery {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* Mobile / Zoom → slider */
+    @media (max-width: 600px) {
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+        }
+
+        .gallery-item {
+            min-width: 220px;
+            flex-shrink: 0;
+        }
+
+        .gallery img {
+            height: 160px;
+        }
+
+        .gallery::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    </style>
+
 </head>
 <body>
 
@@ -14,7 +68,6 @@
     <a href="Learning Resources.html">Learning Resources</a> |
     <a href="memories.html">Memories</a> |
     <a href="courses.html">Academic Courses</a> 
-  <!--<a href="gate.html">Exam Resources</a>--> 
 </nav>
 
 
@@ -44,7 +97,6 @@
 <h2 class="section-title">Masters</h2>
 
 <div class="gallery">
-
 
     <div class="gallery-item">
         <img src="Images/Mtech/16.jpg">
@@ -81,7 +133,7 @@
         <p class="memory-caption">Celebration day</p>
     </div>
 
-     <div class="gallery-item">
+    <div class="gallery-item">
         <img src="Images/Mtech/24.jpg">
         <p class="memory-caption">From reading Ullman's book to meeting him</p>
     </div>
@@ -93,9 +145,9 @@
 
     <div class="gallery-item">
         <img src="Images/Mtech/23.jpg">
-        <p class="memory-caption">IISc Mornings> Everything else</p>
+        <p class="memory-caption">IISc Mornings > Everything else</p>
     </div>
- 
+
     <div class="gallery-item">
         <img src="Images/Mtech/26.jpg">
         <p class="memory-caption">Birthday Celebration </p>
@@ -103,12 +155,12 @@
 
     <div class="gallery-item">
         <img src="Images/Mtech/18.jpg">
-        <p class="memory-caption">@ Bejing bites</p>
+        <p class="memory-caption">@ Beijing bites</p>
     </div>
 
     <div class="gallery-item">
         <img src="Images/Mtech/25.jpg">
-        <p class="memory-caption">Smile wide,worry less</p>
+        <p class="memory-caption">Smile wide, worry less</p>
     </div>
 
     <div class="gallery-item">
@@ -127,6 +179,7 @@
     </div>
 
 </div>
+
 
 <h2 class="section-title">PhD</h2>
 
@@ -148,9 +201,6 @@
     </div>
 
 </div>
-
-
-
 
 
 <script src="script.js"></script>
