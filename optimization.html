@@ -15,10 +15,23 @@ body {
     font-family: Georgia, serif;
     line-height: 1.7;
 }
+
+/* Question styling */
+.question {
+    color: #1f4e79; /* elegant blue */
+    font-weight: bold;
+}
+
+/* Solution styling */
+.solution {
+    color: #000000;
+}
+
 .katex-display {
     text-align: left;
     margin: 1.5em 0;
 }
+
 h2 {
     margin-top: 40px;
 }
@@ -45,25 +58,25 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- Q1 -->
 <h2>1. Convexity of Interior and Closure</h2>
 
-<p><b>Problem.</b> Let $ \Omega \subset \mathbb{R}^n $ be convex. Show that $ \mathrm{int}(\Omega) $ and $ \overline{\Omega} $ are convex.</p>
+<p class="question">Problem. Let $ \Omega \subset \mathbb{R}^n $ be convex. Show that $ \mathrm{int}(\Omega) $ and $ \overline{\Omega} $ are convex.</p>
 
-<p><b>Solution.</b></p>
+<p class="solution"><b>Solution.</b></p>
 
-<p><b>Convexity of $ \mathrm{int}(\Omega) $:</b></p>
+<p class="solution"><b>Convexity of $ \mathrm{int}(\Omega) $:</b></p>
 
-<p>Fix $ a, b \in \mathrm{int}(\Omega) $ and $ \lambda \in (0,1) $. Since $ a \in \mathrm{int}(\Omega) $, there exists an open set $ V_a $ such that:</p>
+<p class="solution">Fix $ a, b \in \mathrm{int}(\Omega) $ and $ \lambda \in (0,1) $. Since $ a \in \mathrm{int}(\Omega) $, there exists an open set $ V_a $ such that:</p>
 
 $$
 a \in V_a \subset \Omega
 $$
 
-<p>Define:</p>
+<p class="solution">Define:</p>
 
 $$
 V = \{ \lambda x + (1-\lambda)b \mid x \in V_a \}
 $$
 
-<p>Then $ V $ is open, contains $ \lambda a + (1-\lambda)b $, and satisfies $ V \subset \Omega $. Hence:</p>
+<p class="solution">Then $ V $ is open, contains $ \lambda a + (1-\lambda)b $, and satisfies $ V \subset \Omega $. Hence:</p>
 
 $$
 \lambda a + (1-\lambda)b \in \mathrm{int}(\Omega)
@@ -72,26 +85,26 @@ $$
 <!-- Q2 -->
 <h2>2. Convex Functions</h2>
 
-<p><b>Problem.</b> Let $f_i : \\mathbb{R}^n \\to \\mathbb{R}$ be convex.</p>
+<p class="question">Problem. Let $f_i : \mathbb{R}^n \to \mathbb{R}$ be convex.</p>
 
-<p><b>(i) Scalar multiple</b></p>
+<p class="solution"><b>(i) Scalar multiple</b></p>
 
 $$
 f_i(\lambda x + (1-\lambda)y) \le \lambda f_i(x) + (1-\lambda)f_i(y)
 $$
 
-<p>Multiply by $\\alpha > 0$:</p>
+<p class="solution">Multiply by $\alpha > 0$:</p>
 
 $$
 \alpha f_i(\lambda x + (1-\lambda)y)
 \le \lambda \alpha f_i(x) + (1-\lambda)\alpha f_i(y)
 $$
 
-<p>Hence $\\alpha f_i$ is convex.</p>
+<p class="solution">Hence $\alpha f_i$ is convex.</p>
 
----
+<hr>
 
-<p><b>(ii) Sum of convex functions</b></p>
+<p class="solution"><b>(ii) Sum of convex functions</b></p>
 
 $$
 f(x) = \sum_{i=1}^m f_i(x)
@@ -106,9 +119,9 @@ f(\lambda x + (1-\lambda)y)
 \end{aligned}
 $$
 
----
+<hr>
 
-<p><b>(iii) Maximum of convex functions</b></p>
+<p class="solution"><b>(iii) Maximum of convex functions</b></p>
 
 $$
 f(x) = \max_i f_i(x)
@@ -118,11 +131,11 @@ $$
 \text{epi}(f) = \bigcap_i \text{epi}(f_i)
 $$
 
-<p>Intersection of convex sets is convex ⇒ $f$ is convex.</p>
+<p class="solution">Intersection of convex sets is convex ⇒ $f$ is convex.</p>
 
----
+<hr>
 
-<p><b>(b) Counterexample:</b></p>
+<p class="solution"><b>(b) Counterexample:</b></p>
 
 $$
 f_1(x)=x, \quad f_2(x)=x^2
@@ -132,42 +145,42 @@ $$
 g(x)=\min(x,x^2)
 $$
 
-<p>Choose $x_1=\frac{1}{2}, x_2=2$:</p>
+<p class="solution">Choose $x_1=\frac{1}{2}, x_2=2$:</p>
 
 $$
 g\left(\frac{x_1+x_2}{2}\right) > \frac{g(x_1)+g(x_2)}{2}
 $$
 
-<p>Hence not convex.</p>
+<p class="solution">Hence not convex.</p>
 
----
+<hr>
 
 <!-- Q3 -->
 <h2>3. Partial Minimization</h2>
 
-<p><b>Problem.</b> Let $f(x,y)$ convex and $C$ convex. Define:</p>
+<p class="question">Problem. Let $f(x,y)$ convex and $C$ convex. Define:</p>
 
 $$
 g(x) = \inf_{y \in C} f(x,y)
 $$
 
-<p><b>Solution.</b></p>
+<p class="solution"><b>Solution.</b></p>
 
-<p>Fix $x_1,x_2$ and $\\lambda \\in (0,1)$.</p>
+<p class="solution">Fix $x_1,x_2$ and $\lambda \in (0,1)$.</p>
 
-<p>Choose $y_1,y_2$ such that:</p>
+<p class="solution">Choose $y_1,y_2$ such that:</p>
 
 $$
 f(x_1,y_1) \le g(x_1)+\epsilon, \quad f(x_2,y_2) \le g(x_2)+\epsilon
 $$
 
-<p>Define:</p>
+<p class="solution">Define:</p>
 
 $$
 y_\lambda = \lambda y_1 + (1-\lambda)y_2
 $$
 
-<p>Then:</p>
+<p class="solution">Then:</p>
 
 $$
 \begin{aligned}
@@ -178,14 +191,14 @@ g(\lambda x_1 + (1-\lambda)x_2)
 \end{aligned}
 $$
 
-<p>Let $\\epsilon \\to 0$:</p>
+<p class="solution">Let $\epsilon \to 0$:</p>
 
 $$
 g(\lambda x_1 + (1-\lambda)x_2)
 \le \lambda g(x_1) + (1-\lambda)g(x_2)
 $$
 
-<p>Hence $g$ is convex.</p>
+<p class="solution">Hence $g$ is convex.</p>
 
 </body>
 </html>
